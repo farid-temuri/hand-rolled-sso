@@ -1,15 +1,29 @@
-# Elysia with Bun runtime
+# SSO hand-rolled SSO implementation
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
+## How to run this:
+
 ```bash
-bun create elysia ./elysia-example
+docker compose up --build
 ```
 
-## Development
-To start the development server run:
-```bash
-bun run dev
+It will spin up db at `PgSQL` at `5432` port, server at 3000 port.
+
+## Development:
+
+Install dependencies
+
+```
+bun i
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+Run `drizzle studio` to monitor database directly
+
+```
+bun run studio
+```
+
+## Migrations:
+
+1. make changes to schema in `./src/db/schema/*`
+2. generate migration `bun run generate`
+3. Apply migration `bun run migrate`

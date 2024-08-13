@@ -1,15 +1,33 @@
 {
   "name": "app",
   "version": "1.0.50",
+  "module": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
+    "studio": "drizzle-kit studio",
+    "start": "bun run ./src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/swagger": "^1.0.5",
+    "@types/pg": "^8.11.6",
+    "drizzle-orm": "0.31.1",
+    "drizzle-typebox": "^0.1.1",
+    "elysia": "latest",
+    "pg": "^8.12.0"
   },
   "devDependencies": {
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+    "@antfu/eslint-config": "^2.19.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "bun-types": "latest",
+    "drizzle-kit": "0.22.2",
+    "eslint": "8",
+    "eslint-plugin-drizzle": "^0.2.3",
+    "eslint-plugin-format": "^0.1.1",
+    "typescript": "^5.4.5"
+  }
 }
